@@ -49,7 +49,7 @@
 
    - **Using pip**:  
      ```bash  
-     git clone --depth 1 https://github.com/XiaomingX/deepseek-quickstart  
+     git clone --depth 1 https://github.com/dkustec/deepseek-quickstart  
      pip install -r requirements.txt  
      python3 main.py  
      ```  
