@@ -1,57 +1,61 @@
-## 深度测试用例设计
+### In-Depth Test Case Design  
 
-为了充分测试给定代码的各个方面，我们需要设计几个涵盖不同场景的测试用例。这些测试用例将帮助我们观察代码的行为和输出，确保功能正常且符合预期。以下是三个具体的测试用例：
+To thoroughly test the code’s capabilities, we’ve designed test cases covering various scenarios to observe its behavior and outputs. These ensure functionality aligns with expectations. Below are three specific test cases:  
 
-### 测试用例1：正常文件创建与编辑
+---
 
-**输入描述：**
-- 创建一个新的文件 `test1.py`，内容为：
-  ```python
-  def hello_world():
-      print("Hello, World!")
-  ```
-- 提交一个命令，要求将 `hello_world` 函数的内容修改为：
-  ```python
-  def hello_world():
-      print("Hello, OpenAI!")
-  ```
+### Test Case 1: **Normal File Creation and Editing**  
+**Input Description**:  
+- Create a new file `test1.py` with:  
+  ```python  
+  def hello_world():  
+      print("Hello, World!")  
+  ```  
+- Submit a command to modify the `hello_world` function to:  
+  ```python  
+  def hello_world():  
+      print("Hello, OpenAI!")  
+  ```  
 
-**预期输出：**
-1. 首先，代码应正常创建 `test1.py` 文件。
-2. 然后，确认将 `hello_world` 函数的内容更改为新内容 `print("Hello, OpenAI!")`。
-3. 代码在文件被编辑后，能够输出相应的处理结果，并在控制台打印更新后的内容。
+**Expected Output**:  
+1. The code should successfully create `test1.py`.  
+2. Confirm the `hello_world` function is updated to `print("Hello, OpenAI!")`.  
+3. After editing, the code outputs processing results and prints the updated content to the console.  
 
-### 测试用例2：文件编辑失败，原始片段不存在
+---
 
-**输入描述：**
-- 创建一个新的文件 `test2.py`，内容为：
-  ```python
-  def greet_user(name):
-      return f"Hello, {name}!"
-  ```
-- 提交一个命令，尝试将一个不存在的代码片段 `def goodbye_user(name):` 替换为：
-  ```python
-  def goodbye_user(name):
-      return f"Goodbye, {name}!"
-  ```
+### Test Case 2: **Failed File Edit (Original Snippet Not Found)**  
+**Input Description**:  
+- Create a new file `test2.py` with:  
+  ```python  
+  def greet_user(name):  
+      return f"Hello, {name}!"  
+  ```  
+- Submit a command attempting to replace a nonexistent snippet (`def goodbye_user(name):`) with:  
+  ```python  
+  def goodbye_user(name):  
+      return f"Goodbye, {name}!"  
+  ```  
 
-**预期输出：**
-1. 当代码尝试替换不存在的片段时，应在控制台输出警告信息，指示未找到原始片段。
-2. 应显示实际文件内容，确保用户看到具体上下文。
+**Expected Output**:  
+1. The console displays a warning indicating the original snippet was not found.  
+2. The actual file content is shown to provide context for the user.  
 
-### 测试用例3：文件路径无效的处理
+---
 
-**输入描述：**
-- 提交一个命令，尝试编辑一个无效路径的文件 `/invalid/path/to/file.py`，并要求更改如下：
-  ```python
-  def invalid_function():
-      pass
-  ```
+### Test Case 3: **Handling Invalid File Paths**  
+**Input Description**:  
+- Submit a command attempting to edit an invalid path (`/invalid/path/to/file.py`) with:  
+  ```python  
+  def invalid_function():  
+      pass  
+  ```  
 
-**预期输出：**
-1. 代码应在控制台输出错误信息，提示指定的文件路径无效或不可访问。
-2. 不应发生程序崩溃，代码应能优雅地处理此类错误。
+**Expected Output**:  
+1. The console outputs an error message stating the path is invalid or inaccessible.  
+2. The program does not crash and handles the error gracefully.  
 
-## 总结
+---
 
-上述测试用例涵盖了代码的文件创建、编辑成功与失败的情境，以及对无效文件路径的处理。这些测试将帮助我们确保代码的健壮性和用户体验。通过执行这些用例，可以有效验证系统的各个功能模块是否正常运作。
+### Summary  
+These test cases cover **file creation**, **successful/failed edits**, and **invalid path handling**, ensuring code robustness and user experience. Executing them verifies that all system modules function as expected.
